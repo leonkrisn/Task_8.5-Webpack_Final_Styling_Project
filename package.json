@@ -9,6 +9,7 @@
     "javascript",
     "webpack"
   ],
+  "homepage": "https://leonkrisn.github.io/Task_8.5-Webpack_Final_Styling_Project",
   "license": "ISC",
   "author": "Habsida",
   "main": "index.js",
