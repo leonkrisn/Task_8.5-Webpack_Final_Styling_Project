@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    
+    <!-- STYLE FOR FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FONTAWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+
+    <!-- SWIPER JS -->
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+
+
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./scss/style.scss" />
+
+
+    <title>Task-Styling_7.4</title>
+    <!-- <title><%= htmlWebpackPlugin.options.title %></title> -->
+
+
+  </head>
+
+
+  <body>
+    <div class="main-container">
+      <!-- NAVBAR FOR LEFT -->
+      <div class="section__little-navbar">
+        <!-- MENU -->
+        <div class="navbar__item-left">
+          <a class="navbar__item" href="#" onclick=showSidebar()>
+            <i class="fa-solid fa-list"></i>
+          </a>
+          <!-- LOGO -->
+          <a class="navbar__item" href="#"
+            ><img src="./img/logo_group.svg" alt="" />
+          </a>
+        </div>
+        
+        <!-- NAVBAR FOR RIGHT -->
+        <div class="navbar__item-right">
+          <!-- PHONE -->
+          <a class="navbar__item one" href="#"
+            ><i class="fa-solid fa-phone-flip"></i>
+          </a>
+          <!-- MESSAGE -->
+          <a class="navbar__item one" href="#"
+            ><i class="fa-solid fa-message"></i>
+          </a>
+          <!-- USER -->
+          <a class="navbar__item one" href="#"
+            ><i class="fa-solid fa-user"></i>
+          </a>
+
+          <span class="navbar__item-span">|</span>
+
+          <!-- SERVICE -->
+          <a class="navbar__item two" href="#"
+            ><i class="fa-solid fa-screwdriver-wrench"></i>
+          </a>
+          <!-- DOC -->
+          <a class="navbar__item two" href="#"
+            ><i class="fa-solid fa-square-poll-horizontal"></i>
+          </a>
+        </div>
+      </div>
+
+
+      <!-- SIDEBAR -->
+      <div class="sidebar">
+
+          <div class="sidebar__top">
+            <!-- X -->
+            <a class="navbar__item" href="#" onclick=hideSidebar()>
+              <i class="fa-solid fa-xmark"></i>
+            </a>
+            <!-- LOGO -->
+            <a class="navbar__item logo" href="#"
+              ><img src="./img/logo_group.png" alt="" />
+            </a>
+            <!-- MAGNIFIER -->
+            <a href="#" class="navbar__item">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </a>
+          </div>
+
+          <div class="sidebar__listmenu">
+            <a href="#" class="part__navigation">Equipment repair</a>
+            <a href="#" class="part__navigation">Service and solutions</a>
+            <a href="#" class="part__navigation">Corporate clients</a>
+            <a href="#" class="part__navigation">Equipment sellers</a>
+            <a href="#" class="part__navigation">Partners</a>
+            <a href="#" class="part__navigation">Manufacturers</a>
+            <a href="#" class="part__navigation">Our service centres</a>
+            <a href="#" class="part__navigation">Contacts</a>
+          </div>
+
+          <div class="sidebar__bottom">
+            <div class="sidebar__bottomicon">
+              <!-- PHONE -->
+              <a class="navbar__item" href="#"
+                ><i class="fa-solid fa-phone-flip"></i>
+              </a>
+              <!-- MESSAGE -->
+              <a class="navbar__item" href="#"
+                ><i class="fa-solid fa-message"></i>
+              </a>
+              <!-- USER -->
+              <a class="navbar__item" href="#"
+                ><i class="fa-solid fa-user"></i>
+              </a>
+            </div>
+
+            <br>
+            <div class="info">
+              <span>mail@cps.com</span><br>
+              <span class="number">8 800 890 8900</span><br>
+              <a href="#">RU</a>
+              <a href="#">EN</a>
+              <a href="#">CH</a>
+            </div>
+
+          </div>
+
+      </div>
+
+      <header class="section__header header">
+        <div class="title">
+          <h2>Services And Support</h2>
+        </div>
+
+
+        <div class="navbar">
+          <!-- FOR WIDE WEB -->
+          <a class="navbar__item three" href="#">
+            Submit a request <i class="fa-solid fa-screwdriver-wrench"></i>
+          </a>
+          <a class="navbar__item three" href="#">
+            Repair status <i class="fa-solid fa-square-poll-horizontal"></i>
+          </a>
+        </div>
+      </header>
+
+      <div class="section__navigation part">
+        <a href="#" class="part__navigation">Brand we repair</a>
+        <a href="#" class="part__navigation">Device we repair</a>
+        <a href="#" class="part__navigation">Service prices</a>
+        <a href="#" class="part__navigation">Addresses of service centres</a>
+        <a href="#" class="part__navigation">Special prices</a>
+      </div>
+
+      <p class="section__content-title main"> Reviews </span><br />
+
+
+      <div class="container">
+
+        <div class="section__content-left main content">
+            <!-- INPUT (CHECKBOX) FOR READMORE/HIDE BUTTON -->
+            <input type="checkbox" id="paragraph_btn" />
+
+          <p class="paragraph_one">
+            We are an authorised service centre of Dell equipment repairs. Only
+            with us can you repair your Dell laptop with the official
+            manufaturer's warranty.
+            <br /><br />
+          </p>
+          <span class="dots1">. . .</span>
+
+          <p class="paragraph_two">
+            We have been successfully operating since 1992 and have earned a
+            reputation as a reliable partner, as evidenced by our large number
+            of loyal customers. We take pride in the fact taht clients come to
+            us through recommendations and, in turn, recommend us to their
+            family and friends.
+          </p>
+          <br /><br />
+          <div class="readMore_btn">
+            <img src="./img/expand.svg" alt=""><label for="paragraph_btn" class="paragraph_button"></label>
+          </div>
+            
+          <!-- </span> -->
+        </div>
+        <div class="section__content-right main">
+          <!-- <h2>THIS IS PICTURE</h2> -->
+          <img src="./img/image.png" alt="image" />
+        </div>
+      </div>
+
+      <!-- BRAND BUTTON -->
+
+      <div class="various_brand">
+        <p class="brand_title">REPAIR OF EQUIPMENT FROM VARIOUS BRANDS</p></br>
+
+        <div class="swiper">
+          <div class="card-wrapper">
+              <div class="brand_logo swiper-wrapper">
+
+                <input type="checkbox" id="logo_btn" />
+
+                  <a href="#" class="brand one swiper-slide">
+                    <img src="./img/icon_brand/lenovo.svg" alt="image" class="brand__logo">
+                    <i class="fa-solid fa-angle-right" class="brand__button"></i>
+                  </a>
+                  <a href="#" class="brand one swiper-slide">
+                    <img src="./img/icon_brand/samsung.svg" alt="image" class="brand__logo">
+                    <i class="fa-solid fa-angle-right" class="brand__button"></i>
+                  </a>
+                  <a href="#" class="brand one swiper-slide">
+                    <img src="./img/icon_brand/apple.svg" alt="image" class="brand__logo">
+                    <i class="fa-solid fa-angle-right" class="brand__button"></i>
+                  </a>
+                  <a href="#" class="brand one swiper-slide">
+                    <img src="./img/icon_brand/viewSonic.svg" alt="image" class="brand__logo">
+                    <i class="fa-solid fa-angle-right" class="brand__button"></i>
+                  </a>
+                  <a href="#" class="brand one swiper-slide">
+                    <img src="./img/icon_brand/bosch.svg" alt="image" class="brand__logo">
+                    <i class="fa-solid fa-angle-right" class="brand__button"></i>
+                  </a>
+                  <a href="#" class="brand one swiper-slide">
+                    <img src="./img/icon_brand/hp.svg" alt="image" class="brand__logo">
+                    <i class="fa-solid fa-angle-right" class="brand__button"></i>
+                  </a>
+                  <a href="#" class="brand one swiper-slide">
+                    <img src="./img/icon_brand/acer.svg" alt="image" class="brand__logo">
+                    <i class="fa-solid fa-angle-right" class="brand__button"></i>
+                  </a>
+                  <a href="#" class="brand one swiper-slide">
+                    <img src="./img/icon_brand/sony.svg" alt="image" class="brand__logo">
+                    <i class="fa-solid fa-angle-right" class="brand__button"></i>
+                  </a>
+
+                  <!-- <div class="logo_more"> -->
+                    <a href="#" class="brand two swiper-slide">
+                      <img src="./img/icon_brand/microsoft.svg" alt="image" class="brand__logo">
+                      <i class="fa-solid fa-angle-right" class="brand__button"></i>
+                    </a>
+                    <a href="#" class="brand two swiper-slide">
+                      <img src="./img/icon_brand/toshiba.svg" alt="image" class="brand__logo">
+                      <i class="fa-solid fa-angle-right" class="brand__button"></i>
+                    </a>
+                    <a href="#" class="brand two swiper-slide">
+                      <img src="./img/icon_brand/asus.svg" alt="image" class="brand__logo">
+                      <i class="fa-solid fa-angle-right" class="brand__button"></i>
+                    </a>
+
+
+                    
+                  <br /><br />
+                  <div class="readMore_btn">
+                    <img src="./img/expand.svg" alt="image" class="logo_button"><label for="logo_btn" class="logo_button"></label>
+                  </div>
+
+              </div>
+
+
+            </div>
+    
+                  <!-- If we need pagination -->
+                    <br><br>
+                  <div class="swiper-pagination"></div>
+
+                  <!-- If we need navigation buttons -->
+                  <!-- <div class="swiper-button-prev"></div> -->
+                  <!-- <div class="swiper-button-next"></div> -->
+
+          </div>
+        </div>
+
+
+      </div>
+        
+
+      </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <!-- SWIPER JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="./js/index.js"></script>
+
+    <!-- SIDEBAR BUTTON -->
+    <script>
+      function showSidebar() {
+        const sidebar = document.querySelector('.sidebar')
+        sidebar.style.display = 'block'
+      }
+
+      function hideSidebar() {
+        const sidebar = document.querySelector('.sidebar')
+        sidebar.style.display = 'none'
+      }
+    </script>
+
+
+  </body>
+</html>

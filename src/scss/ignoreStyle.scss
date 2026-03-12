@@ -1,0 +1,34 @@
+
+
+
+
+.container .readMore_btn img::before {
+  display: inline-flex;
+}
+
+.readMore_btn {
+  & label.paragraph_button::before,
+  & label.logo_button::before {
+    content: 'Read More';
+  }
+}
+
+
+input[type='checkbox'] {
+  &#paragraph_btn:checked  ~ .readMore_btn  label.paragraph_button::before,
+  &#logo_btn:checked ~ .readMore_btn label.logo_button::before {
+    content: 'Hide';
+  }
+}
+
+
+
+input[type='checkbox']#paragraph_btn:checked {
+  & ~ .paragraph_two {
+    display: inline-block;
+  }
+  & ~ .dots1 {
+    display: none;
+  }
+}
+
