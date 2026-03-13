@@ -11,6 +11,7 @@ module.exports = {
 
   // Output file
   output: {
+    publicPath: "/Task_8.5-Webpack_Final_Styling_Project/",
     filename: './js/bundle.js',
     path: path.resolve(__dirname, 'dist') // Add output path
   },
