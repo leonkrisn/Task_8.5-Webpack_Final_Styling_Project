@@ -26,10 +26,70 @@
     
 
 
-  <script defer="defer" src="./js/bundle.js"></script><link href="style.css" rel="stylesheet"></head>
+  <script defer="defer" src="/Task_8.5-Webpack_Final_Styling_Project/./js/bundle.js"></script><link href="/Task_8.5-Webpack_Final_Styling_Project/style.css" rel="stylesheet"></head>
 
+
+  
+
+      
+      <div class="sidebar">
+
+          <div class="sidebar__top">
+            
+            <a class="navbar__item x" href="#" onclick="hideSidebar()">
+              <i class="fa-solid fa-xmark"></i>
+            </a>
+            
+            <a class="navbar__item logo" href="#"><img src="./img/logo_group.png" alt="">
+            </a>
+            
+            <a href="#" class="navbar__item search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </a>
+          </div>
+
+          <div class="sidebar__listmenu">
+            <a href="#" class="part__navigation">Equipment repair</a>
+            <a href="#" class="part__navigation">Service and solutions</a>
+            <a href="#" class="part__navigation">Corporate clients</a>
+            <a href="#" class="part__navigation">Equipment sellers</a>
+            <a href="#" class="part__navigation">Partners</a>
+            <a href="#" class="part__navigation">Manufacturers</a>
+            <a href="#" class="part__navigation">Our service centres</a>
+            <a href="#" class="part__navigation">Contacts</a>
+          </div>
+
+          <div class="sidebar__bottom">
+            <div class="icon">
+              
+              <a class="navbar__item" href="#"><i class="fa-solid fa-phone-flip"></i>
+              </a>
+              
+              <a class="navbar__item" href="#"><i class="fa-solid fa-message"></i>
+              </a>
+              
+              <a class="navbar__item" href="#"><i class="fa-solid fa-user"></i>
+              </a>
+            </div>
+
+            <br>
+            <div class="info">
+              <span>mail@cps.com</span><br>
+              <span class="number">8 800 890 8900</span><br>
+              <a href="#">RU</a>
+              <a href="#">EN</a>
+              <a href="#">CH</a>
+            </div>
+
+          </div>
+
+      </div>
+
+      
 
   <body>
+
+    
     <div class="main-container">
       
       <div class="section__little-navbar">
@@ -39,7 +99,7 @@
             <i class="fa-solid fa-list"></i>
           </a>
           
-          <a class="navbar__item" href="#"><img src="./img/logo_group.svg" alt="">
+          <a class="navbar__item logo" href="#"><img src="./img/logo_group.svg" alt="">
           </a>
         </div>
         
@@ -66,61 +126,6 @@
         </div>
       </div>
 
-
-      
-      <div class="sidebar">
-
-          <div class="sidebar__top">
-            
-            <a class="navbar__item" href="#" onclick="hideSidebar()">
-              <i class="fa-solid fa-xmark"></i>
-            </a>
-            
-            <a class="navbar__item logo" href="#"><img src="./img/logo_group.png" alt="">
-            </a>
-            
-            <a href="#" class="navbar__item">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </a>
-          </div>
-
-          <div class="sidebar__listmenu">
-            <a href="#" class="part__navigation">Equipment repair</a>
-            <a href="#" class="part__navigation">Service and solutions</a>
-            <a href="#" class="part__navigation">Corporate clients</a>
-            <a href="#" class="part__navigation">Equipment sellers</a>
-            <a href="#" class="part__navigation">Partners</a>
-            <a href="#" class="part__navigation">Manufacturers</a>
-            <a href="#" class="part__navigation">Our service centres</a>
-            <a href="#" class="part__navigation">Contacts</a>
-          </div>
-
-          <div class="sidebar__bottom">
-            <div class="sidebar__bottomicon">
-              
-              <a class="navbar__item" href="#"><i class="fa-solid fa-phone-flip"></i>
-              </a>
-              
-              <a class="navbar__item" href="#"><i class="fa-solid fa-message"></i>
-              </a>
-              
-              <a class="navbar__item" href="#"><i class="fa-solid fa-user"></i>
-              </a>
-            </div>
-
-            <br>
-            <div class="info">
-              <span>mail@cps.com</span><br>
-              <span class="number">8 800 890 8900</span><br>
-              <a href="#">RU</a>
-              <a href="#">EN</a>
-              <a href="#">CH</a>
-            </div>
-
-          </div>
-
-      </div>
-
       <header class="section__header header">
         <div class="title">
           <h2>Services And Support</h2>
@@ -139,11 +144,11 @@
       </header>
 
       <div class="section__navigation part">
-        <a href="#" class="part__navigation">Brand we repair</a>
-        <a href="#" class="part__navigation">Device we repair</a>
-        <a href="#" class="part__navigation">Service prices</a>
-        <a href="#" class="part__navigation">Addresses of service centres</a>
-        <a href="#" class="part__navigation">Special prices</a>
+        <a href="#" class="part__navigation menu">Brand we repair</a>
+        <a href="#" class="part__navigation menu">Device we repair</a>
+        <a href="#" class="part__navigation menu">Service prices</a>
+        <a href="#" class="part__navigation menu">Addresses of service centres</a>
+        <a href="#" class="part__navigation menu">Special prices</a>
       </div>
 
       <p class="section__content-title main"> Reviews <br>
@@ -262,13 +267,144 @@
                   
 
           </div>
+      </div>
+
+        <div class="various_services">
+          <p class="service_title">REPAIR OF VARIOUS TYPES OF EQUIPMENT</p>
+
+            
+            <div class="swiper">
+              <div class="card-wrapper">
+                  <div class="service_wrap swiper-wrapper">
+
+                    <input type="checkbox" id="logo_btn__service">
+
+
+                  <a href="#" class="service one swiper-slide">
+                    <p class="service__kind">Laptop repair</p><br><br><br>
+                    <i class="fa-solid fa-angle-right" class="service__button"></i>
+                  </a>
+                  
+                  <a href="#" class="service one swiper-slide">
+                    <p class="service__kind">Tablet repair</p><br><br><br>
+                    <i class="fa-solid fa-angle-right" class="service__button"></i>
+                  </a>
+                  <a href="#" class="service one swiper-slide">
+                    <p class="service__kind">PC repair</p><br><br><br>
+                    <i class="fa-solid fa-angle-right" class="service__button"></i>
+                  </a>
+                  <a href="#" class="service one swiper-slide">
+                    <p class="service__kind">Monitor repair</p><br><br><br>
+                    <i class="fa-solid fa-angle-right" class="service__button"></i>
+                  </a>
+                  <a href="#" class="service two swiper-slide">
+                    <p class="service__kind">Virus Cleaning and Firewall repair</p><br><br><br>
+                    <i class="fa-solid fa-angle-right" class="service__button"></i>
+                  </a>
+
+                  <a href="#" class="service two swiper-slide">
+                    <p class="service__kind">Software installation</p><br><br><br>
+                    <i class="fa-solid fa-angle-right" class="service__button"></i>
+                  </a>
+
+                  <a href="#" class="service two swiper-slide">
+                    <p class="service__kind">Windows/Mac Product</p><br><br><br>
+                    <i class="fa-solid fa-angle-right" class="service__button"></i>
+                  </a>
+
+
+
+
+                    <br><br>
+                  <div class="readMore_btn">
+                    <img src="./img/expand.svg" alt="image" class="logo_button__service"><label for="logo_btn__service" class="logo_button__service"></label>
+                  </div>
+
+                  </div>
+              </div>
+
+                                
+                    <br><br>
+                  <div class="swiper-pagination"></div>
+
+
+            </div>
+
         </div>
 
 
-      </div>
+
+        <div class="service_price">
+          <p class="service_price__title">SERVICE PRICES</p>
+
+          <table class="service_price__table">
+            <thead class="service_price__table-content title">
+              <tr>
+                <th class="name">Repair services</th>
+                <th class="price">Price</th>
+                <th class="deadline">Deadline</th>
+                <th class="button"></th>
+              </tr>
+            </thead>
+
+            <tbody class="service_price__table-content main">
+              <tr>
+                <td class="name">Diagnostic</td>
+                <td class="price">Free of charge</td>
+                <td class="deadline">30 min</td>
+                <td class="button">
+                  <a href="#" class="order">
+                    <p class="p-order">Order</p>
+                    <i class="fa-solid fa-angle-right" class="service__button"></i>
+                  </a>
+                </td>
+              </tr>            
+              
+              <tr>
+                <td class="name">Polyphonic speaker replacement</td>
+                <td class="price">1000 P</td>
+                <td class="deadline">30-120 min</td>
+                <td class="button">
+                  <a href="#" class="order">
+                    <p class="p-order">Order</p>
+                    <i class="fa-solid fa-angle-right" class="service__button"></i>
+                  </a>
+                </td>
+              </tr>            
+              
+              <tr>
+                <td class="name">Testing with a technical report</td>
+                <td class="price">1000 P</td>
+                <td class="deadline">30-120 min</td>
+                <td class="button">
+                  <a href="#" class="order">
+                    <p class="p-order">Order</p>
+                    <i class="fa-solid fa-angle-right" class="service__button"></i>
+                  </a>
+                </td>
+              </tr>            
+              
+              <tr>
+                <td class="name">Software replacement</td>
+                <td class="price">1000 P</td>
+                <td class="deadline">30-120 min</td>
+                <td class="button">
+                  <a href="#" class="order">
+                    <p class="p-order">Order</p>
+                    <i class="fa-solid fa-angle-right" class="service__button"></i>
+                  </a>
+                </td>
+              </tr>
+            </tbody>            
+
+          </table>
+        </div>
+
+
+    </div>
         
 
-      
+  
 
 
     
