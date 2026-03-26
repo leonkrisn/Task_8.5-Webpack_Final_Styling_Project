@@ -49,6 +49,7 @@ $content-color: #ff3e79;
   justify-content: center;
   justify-items: center;
   justify-content: center;
+  background-color: white;
 }
 
 @mixin hoverPinkText {
@@ -76,6 +77,8 @@ $content-color: #ff3e79;
 }
 
 body {
+  padding: 0;
+  margin: 0;
   width: 100%;
   overflow-x: hidden;
   box-sizing: border-box;
@@ -85,12 +88,16 @@ body {
   &__little-navbar {
     @include flex-spaceBetween;
     width: 100%;
-    padding: 0 20px;
-    background-color: $bgColor;
+    padding: 10px 20px;
+    background-color: white;
+    position: static;
+    // z-index: 999;
+    // margin-bottom: 50px;
   }
 
   &__content-title.main {
     padding-top: 40px;
+    padding-left: 50px;
     margin-bottom: 10px;
     font-size: $regularFontSize;
   }
@@ -99,9 +106,11 @@ body {
 .navbar {
   &__item-left {
     @include flex-spaceBetween;
+    background-color: white;
   }
   &__item-right {
     display: flex;
+    background-color: white;
   }
   &__item.one,
   &__item.three {
@@ -112,6 +121,8 @@ body {
 .container {
   display: flex;
   flex-direction: column;
+  padding-left: 50px;
+  padding-bottom: 50px;
 }
 
 .swiper {
@@ -127,7 +138,7 @@ body {
 }
 
 @media (min-width: 768px) {
-  .nevbar {
+  .navbar {
     display: flex;
   }
   .navbar {
@@ -146,18 +157,41 @@ body {
     display: flex;
     flex-wrap: flex;
   }
+
+  .service_wrap {
+    display: flex;
+    flex-wrap: flex;
+  }
 }
 
 @media (min-width: 1120px) {
   .section {
     &__little-navbar {
       display: none;
+      background-color: white;
     }
   }
   .navbar {
     &__item.three {
       display: inline-flex;
+      background-color: $bgColor;
     }
+  }
+  .sidebar {
+    display: static;
+    left: 0;
+    float: left;
+    &__top {
+      a.navbar__item.x {
+        display: none;
+      }
+    }
+  }
+  .main-container {
+    // display: flex;
+    // float: left;
+    // top: 0;
+    margin-left: 320px;
   }
 }
 
@@ -168,6 +202,12 @@ body {
     &-button-next {
       display: block;
     }
+  }
+}
+
+@media (max-width: 1120px) {
+  .sidebar {
+    display: none;
   }
 }
 
@@ -194,12 +234,7 @@ body {
 
 // GRID END
 
-.main-container {
-  margin-top: 20px;
-}
-
-.sidebar img,
-.navbar__item img {
+.sidebar img .navbar__item img {
   @include img-logo;
 }
 
@@ -209,7 +244,7 @@ body {
 
 .header {
   @include flex-spaceBetween;
-  padding: 50px 50px 50px 50px;
+  padding: 50px 50px 30px 50px;
 }
 
 h2 {
@@ -224,6 +259,7 @@ h2 {
     @include flex-inlineSpaceBetween;
     text-decoration: none;
     color: $text;
+    background-color: white;
 
     // HOVER
     &:hover {
@@ -282,9 +318,11 @@ h2 {
     text-decoration: none;
     text-align: center;
 
-    &:hover {
-      @include hoverPinkText;
-      border-bottom: 4px solid $content-color;
+    &.menu:hover {
+      background-color: white;
+      border: 2px solid #61dd95;
+      padding: 10px 5px 10px 5px;
+      border-radius: 5px;
     }
   }
 }
@@ -301,15 +339,10 @@ h2 {
 }
 
 .read_more,
-.part__navigation,
 .navbar__item {
   &:hover {
     @include hoverPinkText;
   }
-}
-
-.part__navigation:hover {
-  border-bottom: 4px solid $content-color;
 }
 
 .content {
@@ -318,7 +351,7 @@ h2 {
 }
 
 .main {
-  margin-left: 50px;
+  // margin-left: 50px;
   color: $mainTextContent;
   & a {
     text-decoration: none;
@@ -379,48 +412,109 @@ input[type='checkbox']#paragraph_btn:checked {
 
 // READ MORE BUTTON (END)
 
+// @media (min-width: 1121px) {
+//     .sidebar {
+//     display: block;
+//     position: static;
+//     float: left;
+//     z-index: 999;
+//     height: 100%;
+
+//     top: 0;
+//     left: 0;
+//     bottom: 0;
+//   // right: 0;
+//   // position: fixed;
+//     z-index: 999;
+//     height: 100%;
+//     width: 320px;
+
+//     &__top a.navbar__item i {
+//     // PERLU KOREKSI
+//     @include flex-inlineSpaceBetween;
+//     justify-items: center;
+//     margin: 20px 10px;
+//     display: none;
+//   }
+//   }
+
+// }
+
 .sidebar {
-  display: none;
+}
+
+* .sidebar {
+  background-color: white;
+}
+
+.sidebar {
+  // display: block;
+  position: fixed;
+  // float: left;
   top: 0;
   left: 0;
-  position: fixed;
+  bottom: 0;
+  // right: 0;
+  // position: fixed;
   z-index: 999;
-  height: 100vh;
+  height: 100%;
   width: 320px;
+  background-color: white;
   /* flex-direction: column; */
-  align-items: flex;
-  justify-content: flex;
+  // align-items: flex;
+  // justify-content: flex;
   box-shadow: 10px 0 10px rgba(0, 0, 0, 0.1);
 
+  &__top,
+  &__listmenu,
+  &__bottom,
+  & .info,
+  & a,
+  & span,
+  & .icon {
+    background-color: white;
+  }
+
   &__item.logo {
+    position: fixed;
     margin-right: 60px;
     align-items: center;
   }
 
   &__top {
+    background-color: white;
+
     // PERLU KOREKSI
     @include flex-inlineSpaceBetween;
     justify-items: center;
     margin: 20px 10px;
   }
 
-  &__listmenu .part__navigation {
-    color: $text;
-    margin: 10px 0;
-    margin-left: 30px;
-    padding-left: 10px;
-    align-items: center;
+  &__listmenu {
+    background-color: white;
+
+    .part__navigation {
+      color: $text;
+      margin: 10px 0;
+      margin-left: 30px;
+      padding-left: 10px;
+      align-items: center;
+    }
   }
 
   &__bottom {
-    position: relative;
-    bottom: 10px;
+    background-color: white;
+
+    position: fixed;
+    bottom: 0;
     margin-left: 40px;
-    margin-top: 120px;
+    margin-bottom: 50px;
   }
 
   & .info {
     // @include flex-center;
+    background-color: white;
+
     justify-content: center;
     justify-content: center;
     align-items: center;
@@ -442,6 +536,7 @@ input[type='checkbox']#paragraph_btn:checked {
       text-decoration: none;
       text-align: center;
       font-size: larger;
+      background-color: white;
 
       &:hover {
         @include hoverPinkText;
@@ -455,7 +550,8 @@ input[type='checkbox']#paragraph_btn:checked {
     align-items: center;
     font-weight: 1000;
     cursor: pointer;
-    color: $content-color;
+    color: $mainTextContent;
+    opacity: 0.5;
   }
 
   &__bottom a {
@@ -469,34 +565,31 @@ input[type='checkbox']#paragraph_btn:checked {
   }
 }
 
-@media (min-width: 789px) {
-  .sidebar {
-    display: none;
-  }
-}
-
 // ICON BRANDS
-
-p.brand_title {
-  font-weight: 500;
-  margin-top: 40px;
-  margin-left: 50px;
-  font-size: 20px;
-}
 
 .brand {
   user-select: none;
   justify-content: space-between;
   text-decoration: none;
   align-items: center;
-  width: 400px;
-  height: 120px;
+  width: 240px;
+  height: 72px;
   padding-left: 20px;
   padding-right: 20px;
   background-color: $bgColor;
-  margin: 20px 30px;
-  border: 2px solid rgb(219, 219, 219);
-  border-radius: 10px;
+  margin: 20px 60px 20px 0;
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 6px;
+
+  &_title {
+    font-weight: 500;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 50px;
+    font-size: 20px;
+    background-color: white;
+    border-top: 1px solid #61dd95;
+  }
 
   &.one {
     display: inline-flex;
@@ -508,9 +601,9 @@ p.brand_title {
 
   & i {
     @include flex-center;
-    font-size: $regularFontSize;
+    font-size: 10px;
     border: 2px solid $content-color;
-    padding: 25px;
+    padding: 15px;
     border-radius: 50px;
     text-decoration: none;
     color: $content-color;
@@ -527,8 +620,8 @@ p.brand_title {
 img.brand__logo {
   @include flex-center;
   flex-direction: row;
-  width: 200px;
-  height: 55px;
+  width: 120px;
+  height: 45px;
   gap: 100px;
 }
 
@@ -552,7 +645,8 @@ img.brand__logo {
 
 input[type='checkbox'] {
   &#paragraph_btn,
-  &#logo_btn {
+  &#logo_btn,
+  &#logo_btn__service {
     height: 2em;
     display: block;
     appearance: none;
@@ -561,8 +655,8 @@ input[type='checkbox'] {
 
 label {
   &.paragraph_button,
-  &.logo_button {
-    
+  &.logo_button,
+  &.logo_button__service {
     position: relative;
     cursor: pointer;
     font-size: $regularFontSize;
@@ -583,6 +677,16 @@ label {
   img.logo_button {
     display: none;
   }
+  .service {
+    &.one,
+    &.two {
+      display: inline-block;
+    }
+  }
+
+  img.logo_button__service {
+    display: none;
+  }
 }
 
 @media (min-width: 768px) {
@@ -600,21 +704,44 @@ label {
       display: none;
     }
   }
+  .service {
+    &_wrap {
+      display: block;
+    }
+    &_wrap .readMore_btn:hover {
+      box-shadow: 0px 0px 10px #c1c1c1;
+    }
+
+    &.one {
+      display: inline-block;
+    }
+    &.two {
+      display: none;
+    }
+  }
 
   .brand_logo .readMore_btn img.logo_button::before {
     display: inline-flex;
   }
 
+  .service_wrap .readMore_btn img.logo_button__service::before {
+    display: inline-block;
+  }
+
   .readMore_btn {
     & label.paragraph_button::before,
-    & label.logo_button::before {
+    & label.logo_button::before,
+    & label.logo_button__service::before {
       content: 'Read More';
     }
   }
 
   input[type='checkbox'] {
     &#paragraph_btn:checked ~ .readMore_btn label.paragraph_button::before,
-    &#logo_btn:checked ~ .readMore_btn label.logo_button::before {
+    &#logo_btn:checked ~ .readMore_btn label.logo_button::before,
+    &#logo_btn__service:checked
+      ~ .readMore_btn
+      label.logo_button__service::before {
       content: 'Hide';
     }
   }
@@ -624,8 +751,135 @@ label {
   input[type='checkbox']#logo_btn:checked ~ .brand.two {
     display: inline-flex;
   }
+
+  input[type='checkbox']#logo_btn__service:checked ~ .brand.two {
+    display: inline-block;
+  }
 }
 
 // THE CODE READ MORE / HIDE ENDED
 
+.service {
+  user-select: none;
+  // justify-content: space-between;
+  text-decoration: none;
+  align-items: center;
+  width: 240px;
+  height: 160px;
+  padding: 20px;
+  background-color: $bgColor;
+  margin: 20px 60px 20px 0;
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 6px;
 
+  &_title {
+    font-weight: 500;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 50px;
+    font-size: 20px;
+    background-color: white;
+    border-top: 1px solid #61dd95;
+  }
+  &_kind {
+    padding-bottom: 100px;
+  }
+
+  &_wrap {
+    margin-left: 50px;
+  }
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 5px 5px 10px $shadowColor;
+  }
+
+  & p {
+    text-decoration: none;
+    color: $text;
+  }
+
+  & i {
+    @include flex-center;
+    font-size: 10px;
+    border: 2px solid $content-color;
+    padding: 15px;
+    border-radius: 50px;
+    text-decoration: none;
+    color: $content-color;
+    width: 20px;
+    height: 10px;
+    float: right;
+  }
+}
+
+// SERVICE PRICE
+
+.service_price {
+  // display: flex;
+  &__title {
+    font-weight: 500;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 50px;
+    font-size: 20px;
+    background-color: white;
+    border-top: 1px solid #61dd95;
+  }
+
+  @media (min-width: 768px) {
+    &__table {
+      // display: flex;
+      margin: 50px;
+
+      & thead tr th {
+        border-radius: 20px;
+        margin: 0%;
+        padding: 20px 150px;
+        background-color: $bgColor;
+      }
+
+      & tbody {
+        border: #ff3e79 solid 2px;
+        border-radius: 10px;
+      }
+
+      & tbody tr td {
+        padding: 20px 300px 20px 20px;
+        background-color: #fff;
+        &.price,
+        &.deadline,
+        &.button {
+          background-color: #fff;
+        }
+        & a.order {
+          @include flex-spaceAround;
+          background-color: $content-color;
+          border: none;
+          border-radius: 50px;
+          padding: 7px 30px;
+
+          & p {
+            color: white;
+            background-color: $content-color;
+            margin-right: 10px;
+          }
+
+          & i {
+            background-color: $content-color;
+            font-size: 10px;
+            text-decoration: none;
+            color: white;
+            float: right;
+          }
+        }
+      }
+    }
+  }
+
+
+
+  @media (max-width: 768px) {
+    
+  }
+}
