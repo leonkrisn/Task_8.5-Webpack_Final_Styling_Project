@@ -129,7 +129,9 @@ body {
   &-pagination,
   &-button-prev,
   &-button-next {
-    display: none;
+    // display: flex;
+    margin-top: 10px;
+    position: static;
   }
 
   &-slide {
@@ -158,9 +160,14 @@ body {
     flex-wrap: flex;
   }
 
-  .service_wrap {
+  .service_wrap,
+  .swiper-wrapper,
+  .card-wrapper {
     display: flex;
     flex-wrap: flex;
+    justify-content: center;
+    align-items: center;
+    @include flex-center;
   }
 }
 
@@ -813,6 +820,8 @@ label {
   }
 }
 
+//   T A B L E ______________________________________________________________________________________
+
 // SERVICE PRICE
 
 .service_price {
@@ -831,6 +840,8 @@ label {
     &__table {
       // display: flex;
       margin: 50px;
+      width: 100%;
+      border-collapse: collapse;
 
       & thead tr th {
         border-radius: 20px;
@@ -878,5 +889,40 @@ label {
   }
 
   @media (max-width: 768px) {
+    table,
+    thead,
+    tbody,
+    tr,
+    th,
+    td {
+      display: block;
+      width: 100%;
+    }
+
+    thead {
+      display: flex;
+    }
+
+    tr {
+      margin-bottom: 15px;
+      border: 1px solid white;
+      border-radius: 8px;
+      padding: 10px;
+      background-color: white;
+    }
+    td {
+      border: none;
+      padding: 8px;
+      position: relative;
+      // padding-left: ;
+    }
+    .card,
+    & thead tr th,
+    & tbody tr td {
+      padding: 2em;
+      border-radius: 10px;
+      background-color: white;
+      text-align: center;
+    }
   }
 }
