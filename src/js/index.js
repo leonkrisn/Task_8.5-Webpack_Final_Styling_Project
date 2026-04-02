@@ -2,43 +2,40 @@ import '../scss/style.scss'
 
 console.log('It works!')
 
-
-
-new Swiper('.card-wrapper', {
+const swiper = new Swiper('.swiper', {
   // Optional parameters
   // direction: 'horizontal',
   loop: true,
   // spaceBetween: 30,
 
   // If we need pagination
-    //   USING THIS
+  //   USING THIS
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
-    dynamicBullets: true,
+    dynamicBullets: true
   },
 
   // Navigation arrows
   navigation: {
     nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    prevEl: '.swiper-button-prev'
   },
 
-  // breakpoints: {
-  //   0: {
-  //       slidePerView: 1
-  //   },
-  //   768: {
-  //       slidePerView: 3
-  //   },
-  //   1024: {
-  //       slidePerView: 4
-  //   },
+  breakpoints: {
+    0: {
+      slidesPerView: 2
+    },
+    768: {
+      slidesPerView: 3
+    },
+    1120: {
+      slidesPerView: 5
+    }
+  }
 
-  // }
-
-//   // And if we need scrollbar
-//   scrollbar: {
-//     el: '.swiper-scrollbar',
-//   },
-});
+  //   // And if we need scrollbar
+  //   scrollbar: {
+  //     el: '.swiper-scrollbar',
+  //   },
+})
