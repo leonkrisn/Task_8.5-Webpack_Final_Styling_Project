@@ -1,2 +1,2 @@
-(()=>{"use strict";console.log("It works!"),new Swiper(".swiper",{loop:!0,pagination:{el:".swiper-pagination",clickable:!0,dynamicBullets:!0},navigation:{nextEl:".swiper-button-next",prevEl:".swiper-button-prev"},breakpoints:{0:{slidesPerView:2},768:{slidesPerView:3},1120:{slidesPerView:5}}})})();
+(()=>{"use strict";console.log("It works!"),new Swiper(".swiper",{loop:!0,pagination:{el:".swiper-pagination",clickable:!0,dynamicBullets:!0},navigation:{nextEl:".swiper-button-next",prevEl:".swiper-button-prev"},breakpoints:{0:{slidesPerView:2},768:{slidesPerView:3},1120:{slidesPerView:4},1366:{slidesPerView:5}}})})();
 //# sourceMappingURL=bundle.js.map
