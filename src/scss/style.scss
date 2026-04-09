@@ -36,6 +36,12 @@ $content-color: #ff3e79;
   align-items: center;
 }
 
+@mixin flex-SpaceBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 @mixin flex-spaceAround {
   display: flex;
   justify-content: space-around;
@@ -57,11 +63,34 @@ $content-color: #ff3e79;
   color: $content-color;
 }
 
+// FONT SETTING___________________________________________________________________________________________________
+
 @font-face {
   font-family: 'Comic';
   src: url('../fonts/comic.ttf') format('truetype');
   font-weight: normal;
   font-style: italic;
+}
+
+@font-face {
+  font-family: 'TT Lakes Regular';
+  src: url('../fonts/TTLakes-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT Lakes Medium';
+  src: url('../fonts/TTLakes-Medium.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT Lakes Bold';
+  src: url('../fonts/TTLakes-Bold.ttf');
+  font-weight: normal;
+  font-style: normal;
 }
 
 // MIXIN ENDED___________________________________________________________________________________________________________
@@ -70,8 +99,8 @@ $content-color: #ff3e79;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  // background-color: $bgColor;
-  font-family: 'Roboto';
+  background-color: $bgColor;
+  font-family: 'TT Lakes Regular';
   font-optical-sizing: auto;
   font-weight: normal;
   font-style: normal;
@@ -182,6 +211,12 @@ body {
 }
 
 @media (min-width: 1120px) {
+  .main-container {
+    // display: flex;
+    // float: left;
+    // top: 0;
+    margin-left: 320px;
+  }
   .section {
     &__little-navbar {
       display: none;
@@ -203,12 +238,6 @@ body {
         display: none;
       }
     }
-  }
-  .main-container {
-    // display: flex;
-    // float: left;
-    // top: 0;
-    margin-left: 320px;
   }
 }
 
@@ -291,6 +320,7 @@ body {
 h2 {
   text-align: left;
   font-weight: bold;
+  font-family: 'TT Lakes Bold';
   border-left: aqua 20px;
   font-size: 35px;
 }
@@ -300,10 +330,11 @@ h2 {
     @include flex-inlineSpaceBetween;
     text-decoration: none;
     color: $text;
-    background-color: white;
+    background-color: transparent;
 
     // HOVER
-    &:hover {
+    &:hover,
+    &:active {
       @include hoverPinkText;
     }
   }
@@ -365,6 +396,13 @@ h2 {
       padding: 10px 5px 10px 5px;
       border-radius: 5px;
     }
+
+    &.menu:active {
+      background-color: white;
+      border: 2px solid #61dd95;
+      padding: 10px 5px 10px 5px;
+      border-radius: 5px;
+    }
   }
 }
 
@@ -374,6 +412,7 @@ h2 {
 .navbar__item,
 .read_more,
 .brand,
+.service,
 .sidebar .part__navigation,
 .sidebar .info a {
   transition: $transition;
@@ -585,7 +624,8 @@ input[type='checkbox']#paragraph_btn:checked {
     }
   }
 
-  & .part__navigation:hover {
+  & .part__navigation:hover,
+  .part__navigation:active {
     border-left: 4px solid #61dd95;
     border-bottom: none;
     align-items: center;
@@ -600,6 +640,7 @@ input[type='checkbox']#paragraph_btn:checked {
   }
 
   & .info .number {
+    font-family: 'TT Lakes Bold';
     font-size: 30px;
     font-weight: 900;
     margin: 10px 0;
@@ -607,6 +648,12 @@ input[type='checkbox']#paragraph_btn:checked {
 }
 
 // ICON BRANDS_______________________________________________________________________________________________________________
+
+.various_brand,
+.various_services,
+.service_price {
+  width: 100%;
+}
 
 .brand {
   user-select: none;
@@ -617,12 +664,13 @@ input[type='checkbox']#paragraph_btn:checked {
   height: 72px;
   padding-left: 20px;
   padding-right: 20px;
-  background-color: $bgColor;
+  background-color: white;
   margin: 20px 60px 20px 0;
   border: 1px solid rgb(219, 219, 219);
   border-radius: 6px;
 
   &_title {
+    font-family: 'TT Lakes Medium';
     font-weight: 500;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -638,6 +686,7 @@ input[type='checkbox']#paragraph_btn:checked {
 
   &_logo {
     margin-left: 50px;
+    width: 100%;
   }
 
   & i {
@@ -650,20 +699,24 @@ input[type='checkbox']#paragraph_btn:checked {
     color: $content-color;
     width: 20px;
     height: 10px;
+    background-color: transparent;
   }
 
   &:hover {
+    background-color: white;
     cursor: pointer;
     box-shadow: 5px 5px 10px $shadowColor;
   }
 }
 
 img.brand__logo {
+  background-color: transparent;
   @include flex-center;
   flex-direction: row;
   width: 120px;
   height: 45px;
   gap: 100px;
+  margin-left: 10px;
 }
 
 .readMore_btn {
@@ -676,6 +729,11 @@ img.brand__logo {
   padding-right: 70px;
   margin-bottom: 50px;
   transition: 0.3s ease-in;
+
+  & img,
+  label {
+    background-color: transparent;
+  }
 
   & img {
     width: 30px;
@@ -731,12 +789,19 @@ label {
 }
 
 @media (min-width: 768px) {
+  .container {
+    & .readMore_btn:hover {
+      box-shadow: 0px 0px 10px #c1c1c1;
+      background-color: white;
+    }
+  }
   .brand {
     &_logo {
       display: block;
     }
     &_logo .readMore_btn:hover {
       box-shadow: 0px 0px 10px #c1c1c1;
+      background-color: white;
     }
     &.one {
       display: inline-flex;
@@ -751,6 +816,7 @@ label {
     }
     &_wrap .readMore_btn:hover {
       box-shadow: 0px 0px 10px #c1c1c1;
+      background-color: white;
     }
 
     &.one {
@@ -808,12 +874,13 @@ label {
   width: 240px;
   height: 160px;
   padding: 20px;
-  background-color: $bgColor;
+  background-color: white;
   margin: 20px 60px 20px 0;
   border: 1px solid rgb(219, 219, 219);
   border-radius: 6px;
 
   &_title {
+    font-family: 'TT Lakes Medium';
     font-weight: 500;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -822,8 +889,9 @@ label {
     background-color: white;
     border-top: 1px solid #61dd95;
   }
-  &_kind {
-    padding-bottom: 100px;
+  &__kind {
+    // padding-bottom: 100px;
+    background-color: transparent;
   }
 
   &_wrap {
@@ -836,6 +904,8 @@ label {
   }
 
   & p {
+    font-family: 'TT Lakes Medium';
+    font-weight: 500;
     text-decoration: none;
     color: $text;
   }
@@ -851,6 +921,7 @@ label {
     width: 20px;
     height: 10px;
     float: right;
+    background-color: transparent;
   }
 }
 
@@ -858,9 +929,14 @@ label {
 
 // SERVICE PRICE_______________________________________________________
 
+.swiper-container__service_price {
+  width: 100%;
+}
+
 .service_price {
   // display: flex;
   &__title {
+    font-family: 'TT Lakes Medium';
     font-weight: 500;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -873,6 +949,7 @@ label {
   @media (min-width: 768px) {
     &__table {
       // display: flex;
+      margin-right: 20px;
       margin: 50px;
       width: 100%;
       border-collapse: collapse;
@@ -891,7 +968,7 @@ label {
 
       & tbody tr td {
         padding: 20px 300px 20px 20px;
-        background-color: #fff;
+        background-color: white;
         &.price,
         &.deadline,
         &.button {
@@ -968,6 +1045,53 @@ label {
       border: 1px solid black;
       margin: 30px;
       padding: 20px;
+    }
+  }
+}
+
+// FOOTER__________________________________________________________________
+
+footer {
+  margin: 50px;
+}
+
+.description {
+  p {
+    width: 470px;
+  }
+  h3 {
+    font-family: 'TT Lakes Medium';
+  }
+}
+
+.about {
+  width: 100%;
+
+  @media (min-width: 1120px) {
+    @include flex-SpaceBetween;
+  }
+
+  p {
+    @include flex-inlineSpaceBetween;
+    width: 400px;
+    margin-top: 20px;
+    margin-right: 20px;
+    align-item: center;
+    align-content: center;
+    justify-content: center;
+
+    .info2 {
+      display: flex;
+    }
+
+    @media (max-width: 1120px) {
+      @include flex-inlineSpaceBetween;
+      width: 400px;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      text-align: center;
     }
   }
 }
