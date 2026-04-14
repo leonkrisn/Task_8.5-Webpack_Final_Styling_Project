@@ -238,6 +238,7 @@ body {
         display: none;
       }
     }
+    
   }
 }
 
@@ -666,7 +667,7 @@ input[type='checkbox']#paragraph_btn:checked {
   padding-left: 20px;
   padding-right: 20px;
   background-color: white;
-  margin: 20px 60px 20px 0;
+  margin: 20px 30px 20px 0;
   border: 1px solid rgb(219, 219, 219);
   border-radius: 6px;
 
@@ -860,7 +861,7 @@ label {
     display: inline-flex;
   }
 
-  input[type='checkbox']#logo_btn__service:checked ~ .brand.two {
+  input[type='checkbox']#logo_btn__service:checked ~ .service.two {
     display: inline-block;
   }
 }
@@ -876,7 +877,7 @@ label {
   height: 160px;
   padding: 20px;
   background-color: white;
-  margin: 20px 60px 20px 0;
+  margin: 20px 30px 20px 0;
   border: 1px solid rgb(219, 219, 219);
   border-radius: 6px;
 
@@ -976,7 +977,7 @@ label {
 
         & th {
           padding: 12px 16px;
-          // background-color: white;
+          background-color: transparent;
           // align-items: start;
           // justify-items: left;
           text-align: left;
