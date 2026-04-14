@@ -238,7 +238,6 @@ body {
         display: none;
       }
     }
-    
   }
 }
 
@@ -842,6 +841,7 @@ label {
     & label.logo_button::before,
     & label.logo_button__service::before {
       content: 'Read More';
+      display: block;
     }
   }
 
