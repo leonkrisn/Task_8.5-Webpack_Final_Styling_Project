@@ -744,12 +744,17 @@ img.brand__logo {
 // BUTTON______________________________________________________________________________________________________________________
 
 input[type='checkbox'] {
-  &#paragraph_btn,
-  &#logo_btn,
-  &#logo_btn__service {
+  &#paragraph_btn {
     height: 2em;
     display: block;
     appearance: none;
+  }
+  &#logo_btn,
+  &#logo_btn__service {
+    height: 0;
+    display: block;
+    appearance: none;
+    overflow: hidden;
   }
 }
 
@@ -857,11 +862,14 @@ label {
 
   // SHOW/HIDE PARAGRAPH PRACTICE 1 - SUCCESS_______________________________________________________________________
 
-  input[type='checkbox']#logo_btn:checked ~ .brand.two {
+  // .brand.two and .service.two are now nested inside swiper-wrapper (not siblings of the checkbox),
+  // so we use :has() to target them from the parent container.
+  .various_brand:has(input[type='checkbox']#logo_btn:checked) .brand.two {
     display: inline-flex;
   }
 
-  input[type='checkbox']#logo_btn__service:checked ~ .service.two {
+  .various_services:has(input[type='checkbox']#logo_btn__service:checked)
+    .service.two {
     display: inline-block;
   }
 }
